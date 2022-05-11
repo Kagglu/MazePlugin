@@ -62,5 +62,45 @@ public class Maze {
             }
         }
     }
+    public void printMaze() {
+        System.out.print("+");
+        for (int i = 0; i < maze.length; i++) {
+            System.out.print("---+");
+        }
+        System.out.println();
+        for (int i = 0; i < maze.length; i++) { //connect all nodes
+            System.out.print("| ");
+            for (int j = 0; j < maze.length; j++) {
+                System.out.print(" ");
 
+                if (j + 1 < maze.length) {
+                    if (maze[i][j].isInAdjacencyList(maze[i][j + 1])) {
+                        System.out.print(" | ");
+                    } else {
+                        System.out.print("   ");
+                    }
+                }
+            }
+            System.out.print(" |");
+            System.out.println();
+            System.out.print("+");
+            for (int j = 0; j < maze.length; j++) {
+                if (i + 1 < maze.length) {
+                    if (maze[i][j].isInAdjacencyList(maze[i + 1][j])) {
+                        System.out.print("---");
+                    } else {
+                        System.out.print("   ");
+                    }
+                    System.out.print("+");
+                }
+            }
+            if (i + 1 < maze.length) {
+                System.out.println();
+            }
+        }
+        for (int i = 0; i < maze.length; i++) {
+            System.out.print("---+");
+        }
+        System.out.println();
+    }
 }
