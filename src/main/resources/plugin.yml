@@ -1,0 +1,10 @@
+main: me.kagglu.mazeplugin.Main
+name: MazePlugin
+version: 1.0
+author: Kagglu
+api-version: 1.13
+commands:
+  maze:
+    description: Generates maze of given size
+    usage: /maze (size)
+    permission: bukkit.command.reload
